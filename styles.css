@@ -1,0 +1,23 @@
+table {
+    border-collapse: collapse;
+    border: 1px solid #888;
+}
+
+tr {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #888;
+}
+
+td {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #888;
+}
+
+#basket {
+    background-color: blueviolet;
+    margin-top: 50px;
+    width: 150px;
+}
+
