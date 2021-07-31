@@ -1,46 +1,3 @@
-let basket = {
-    'info': [
-        // ['bloody knife', 10000, 1],
-        // ['ghoust LookLikeHuman medicine', 9000, 2],
-        // ['head of Doyle professor', 10000, 2],
-        // ['Necronomicone Black Book', 100000, 1],
-        // ['black cat', 12000, 1]
-    ],
-    countPrice() {
-        let generalSum = 0
-        let basket = this['info']
-        for (let i = 0; i < basket.length; i++) {
-            let position = basket[i]
-            generalSum += position[1] * position[2]
-        }
-        return generalSum
-    }
-}
-
-function basketDefiner(basket){
-    let divBasket = document.getElementById('CartPrice')
-    let divBasketItems = document.getElementById('ItemsInCart')
-
-    let info = basket.info
-    if (info.length == 0){
-        divBasket.innerText = 'Cart empty'
-    }
-    else {
-        let infoGeneral = 'In cart: ' + String(info.length) + ' goods: ' + String(basket.countPrice()) + ' rub'
-        for (let i = 0; i < info.length; i++){
-            if(info[i][2]>0){
-                const oneGoodinfo = document.createElement('li')
-                oneGoodinfo.innerText = info[i][0] + ': ' + info[i][2]
-                oneGoodinfo.classList.add("inCart")
-                divBasketItems.appendChild(oneGoodinfo)
-            }
-            
-        }
-        divBasket.innerText = infoGeneral
-
-    }
-}
-
 
 const cartChanger = {
     id: 'allGoods',
@@ -104,7 +61,7 @@ const cartChanger = {
         let divBasketItems = document.getElementById('ItemsInCart')
         let liElems = divBasketItems.querySelectorAll('li')
         this.removerCart()
-        basketDefiner(this.basket)
+        this.basketDefiner(this.basket)
 
     },
 
@@ -115,14 +72,36 @@ const cartChanger = {
             divBasketItems.removeChild(liElems[i])
         }
         
+    },
+
+    basketDefiner(basket) {
+        let divBasket = document.getElementById('CartPrice')
+        let divBasketItems = document.getElementById('ItemsInCart')
+    
+        let info = basket.info
+        if (info.length == 0){
+            divBasket.innerText = 'Cart empty'
+        }
+        else {
+            let infoGeneral = 'In cart: ' + String(info.length) + ' goods: ' + String(basket.countPrice()) + ' rub'
+            for (let i = 0; i < info.length; i++){
+                if(info[i][2]>0){
+                    const oneGoodinfo = document.createElement('li')
+                    oneGoodinfo.innerText = info[i][0] + ': ' + info[i][2]
+                    oneGoodinfo.classList.add("inCart")
+                    divBasketItems.appendChild(oneGoodinfo)
+                }
+                
+            }
+            divBasket.innerText = infoGeneral
+    
+        }
     }
 }
 
 
 
-
-basketDefiner(basket)
-
 cartChanger.init()
+cartChanger.basketDefiner(cartChanger.basket)
 
 
