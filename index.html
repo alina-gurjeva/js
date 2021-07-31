@@ -5,8 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="lesson4.js"></script>
+<div class="goods container" id="allGoods">
+    <div class="innerGood">
+        <img class="imageGood" src="images/bloody_knife.jpg" alt="bloody_knife">
+        <p class="Description">Bloody Knife</p>
+        <p class="Price">10000</p>
+        <button class="addCart">Add to cart</button>
+        
+    </div>
+    <div class="innerGood">
+        <img class="imageGood" src="images/ghoust_potion.jpg" alt="ghoust_potion">
+        <p class="Description">Ghoust LookLikeHuman Medicine</p>
+        <p class="Price">9000</p>
+        <button class="addCart">Add to cart</button>
+    </div>
+    <div class="innerGood">
+        <img class="imageGood" src="images/necronomicone.jpg" alt="necronomicone">
+        <p class="Description">Necronomicone</p>
+        <p class="Price">100000</p>
+        <button class="addCart">Add to cart</button>
+    </div>
+    <div class="innerGood">
+        <img class="imageGood" src="images/doyle.jpg" alt="head of Doyle professor">
+        <p class="Description">Head of Doyle professor</p>
+        <p class="Price">10000</p>
+        <button class="addCart">Add to cart</button>
+    </div>
+    <div class="innerGood">
+        <img class="imageGood" src="images/black_cat.jpg" alt="Black Cat">
+        <p class="Description">Black Cat</p>
+        <p class="Price">12000</p>
+        <button class="addCart">Add to cart</button>
+    </div>
+
+</div>
+
+<hr>
+
+<div class="Cart">Cart
+    <p class="Price" id="CartPrice">Price: 0</p>
+    <ul class="GoodsInCart" id="ItemsInCart">
+        <!-- <li class="inCart">Cart empty</li>         -->
+    </ul>
+</div>
+
+    <script src="lesson6.js" defer></script>
 </body>
 </html>
